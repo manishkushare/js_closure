@@ -28,7 +28,7 @@ var alphabet = '';
 var letters = ['a', 'b', 'c', 'd'];
 forEach(letters, function(char) {
   alphabet += char;
-});
+});3
 console.log(alphabet);   //prints 'abcd'
 ```
 
@@ -51,7 +51,7 @@ Here's how it works. The function has an "accumulator value" which starts as the
 Construct a function intersection that compares input arrays and returns a new array with elements found in all of the inputs. Use reduce!
 
 
-## Extension 4
+## Extension 4, 
 Construct a function union that compares input arrays and returns a new array that contains all elements. If there are duplicate elements, only add it once to the new array. Preserve the order of the elements starting from the first element of the first input array. Use reduce!
 
 ## Extension 5

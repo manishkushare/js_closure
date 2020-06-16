@@ -4,6 +4,13 @@
 
 ```js
 // Your code goes here
+function multiplyBy(number) {
+  let num= number;
+  function double(number) {
+    return num*number;
+  }
+  return double;
+}
 
 const double = multiplyBy(2);
 const final = double(15); // final should be 30
@@ -13,6 +20,12 @@ const final = double(15); // final should be 30
 
 ```js
 // Your code goes here
+function fullName(firstName){
+  function surname(lastName) {
+    return `${firstName}` +" " + `${lastName}`;
+  }
+  return surname;
+}
 
 const name = fullName("Will");
 const final = name("Smith"); // final should be "Will Smith"
@@ -23,6 +36,12 @@ const final = name("Smith"); // final should be "Will Smith"
 ```js
 function isInBetween(a, b) {
   // your code goes here
+  function getValue(n) {
+    var min = Math.min(a ,b);
+    var max = Math.max(a,b);
+    return n > min && n < max;
+  }
+  return getValue;
 }
 
 const isChild = isInBetween(10, 100);
@@ -36,6 +55,10 @@ isChild(103); // false
 ```js
 function letsWishThem(greeting) {
   // your code goes here
+  function getMessage(message){
+    return `${greeting}` + " " + `${message}`; 
+  }
+  return getMessage;
 }
 
 const callWithHey = letsWishThem("Hey");
@@ -49,6 +72,12 @@ callWithHello("How Are You?"); // Hello How Are You?
 ```js
 function addGame(gameName) {
   // your code goes here
+  game = gameName;
+  var increment = function() {
+    var i = 0;
+    return function() { return i += 1; };
+  };
+  return increment();
 }
 
 // Output

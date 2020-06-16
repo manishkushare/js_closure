@@ -19,11 +19,14 @@
 	```javascript
 	var lastNameTrier = function(firstName){
 	   //does stuff
-
-	    var innerFunction = function() {
-	        //does stuff
+			var name = firstName;
+	    var innerFunction = function(lastName) {
+			//does stuff
+			var fullName = name + " " + lastName;
+			return fullName;
 	    };
-	    //maybe returns something here
+		//maybe returns something here
+		return innerFunction;
 	};
 	var firstNameFarmer = lastNameTrier('Farmer'); //logs nothing
 	firstNameFarmer('Brown'); //logs 'Farmer Brown'
