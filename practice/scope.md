@@ -7,7 +7,7 @@ let firstName = "Arya";
 const lastName = "Stark";
 var knownAs = "no one";
 
-console.log(window.firstName, window.lastName, window.knownAs);
+console.log(window.firstName, window.lastName, window.knownAs); =>  undefined, undefined, "no one"
 ```
 
 2. Guess the output:
@@ -21,18 +21,20 @@ function fullName(a, b) {
   return a + b;
 }
 
-console.log(window.fullName(firstName, lastName));
+console.log(window.fullName(firstName, lastName)); => AryaStark
 ```
 
 3. Make a Execution Context Diagram for the following JS and write the output.
 
 ```js
-fucntion addOne(num){
+function addOne(num){
   return num + 1;
 }
 var one = addOne(0);
 var two = addOne(1);
 console.log(one, two);
+
+// 1 2
 ```
 
 4. Make a Execution Context Diagram for the following JS and write the output.
@@ -43,7 +45,7 @@ fucntion addOne(num){
   return num + 1;
 }
 var two = addOne(1);
-console.log(one, two);
+console.log(one, two);// 1  2
 ```
 
 5. Make a Execution Context Diagram for the following JS and write the output.
@@ -54,7 +56,7 @@ fucntion addOne(num){
   return num + 1;
 }
 var two = addOne(1);
-console.log(two);
+console.log(two);// 1 2; two=2;
 ```
 
 6. Make a Execution Context Diagram for the following JS and write the output.
@@ -65,7 +67,7 @@ const addOne = num => {
   return num + 1;
 };
 var two = addOne(1);
-console.log(two);
+console.log(two); // cannot access addOne before initializing it.
 ```
 
 7. Make a Execution Context Diagram for the following JS and write the output.
@@ -76,7 +78,7 @@ const addOne = num => {
   return num + 1;
 };
 var two = addOne(1);
-console.log(two);
+console.log(two); // cannot access addOne before initializing it.
 ```
 
 8. What will be the output of the following
@@ -89,7 +91,7 @@ function isAwesome() {
   }
   console.log(awesome);
 }
-isAwesome();
+isAwesome();// undefined
 ```
 
 9. What will be the output of the following
@@ -102,7 +104,7 @@ function isAwesome() {
   }
   console.log(awesome);
 }
-isAwesome();
+isAwesome(); // true;
 ```
 
 10. What will be the output of the following
@@ -116,6 +118,8 @@ function isAwesome() {
   console.log(awesome);
 }
 isAwesome();
+
+// undefined
 ```
 
 11. What will be the output of the following
@@ -129,7 +133,8 @@ function fullName(a, b) {
   return a + b;
 }
 const name = fullName(firstName, lastName);
-console.log(name);
+console.log(name); 
+// "AryaStark"
 ```
 
 12. What will be the output of the following
@@ -144,6 +149,7 @@ function fullName(a, b) {
 }
 const name = fullName(firstName, lastName);
 console.log(name);
+// "AryaStark"
 ```
 
 13. Guess the output of the code below with a reason.
@@ -154,7 +160,9 @@ function sayHello() {
 }
 sayHello();
 
-console.log(name);
+console.log(name); 
+// undefined because function is not retutning anything
+
 ```
 
 14. Guess the output of the code below with a reason.
@@ -164,6 +172,7 @@ if (true) {
   var name = "Arya Stark";
 }
 console.log(name);
+// "Arya Stark" because var is global scope
 ```
 
 15. Guess the output of the code below with a reason.
@@ -173,6 +182,7 @@ if (true) {
   let name = "Arya Stark";
 }
 console.log(name);
+// udefined because let is block scope
 ```
 
 16. Guess the output of the code below with a reason.
@@ -182,6 +192,7 @@ for (var i = 0; i < 20; i++) {
   //
 }
 console.log(i);
+// 20 
 ```
 
 17. Guess the output of the code below with a reason.
@@ -190,7 +201,7 @@ console.log(i);
 for (let i = 0; i < 20; i++) {
   //
 }
-console.log(i);
+console.log(i); //20 
 ```
 
 18. Guess the output of the code below with a reason.
@@ -199,7 +210,9 @@ console.log(i);
 for (var i = 0; i < 20; i++) {
   setTimeout(() => console.log(i, "first"), 100);
 }
-console.log(i, "second");
+console.log(i, "second"); 
+// 20 "second"
+// 20 "first" *20times
 ```
 
 19. Guess the output of the code below with a reason.
@@ -220,6 +233,7 @@ function sample() {
   }
   console.log(username);
 }
+//  no output ; function is not called
 ```
 
 21. Guess the output and the reason behind that.
@@ -230,7 +244,9 @@ function sample() {
     let username = "John Snow";
   }
   console.log(username);
+
 }
+// no output ; function is not called
 ```
 
 22. Guess the output and the reason behind that.
@@ -244,6 +260,7 @@ function sample() {
   }
   console.log(username, "second");
 }
+//  no output; function is not called
 ```
 
 23. Guess the output and the reason behind that.
@@ -257,6 +274,7 @@ function sample() {
   }
   console.log(username, "second");
 }
+// no output; function is not called
 ```
 
 24. Guess the output and the reason behind that.
@@ -270,6 +288,10 @@ function sample(...args) {
 }
 
 sample("First", "Second", "Third");
+// "Hello I am First"
+// "Hello I am Second"
+// "Hello I am Third"
+// it uses rest parameter thats the reasin function may have n number arguments
 ```
 
 25. Guess the output and the reason behind that.
@@ -283,6 +305,10 @@ function sample(...args) {
 }
 
 sample("First", "Second", "Third");
+// "Hello I am First"
+// "Hello I am Second"
+// "Hello I am Third"
+// it uses rest parameter thats the reasin function may have n number arguments
 ```
 
 26. Guess the output and the reason behind that.
@@ -296,8 +322,9 @@ if (true) {
   let username = "Hello World!";
   myFunc();
 }
+// Uncaught ReferenceError: Cannot access 'username' before initialization 
+// because we are executing username before initializing it
 ```
-
 27. Guess the output and the reason behind that.
 
 ```js
@@ -310,6 +337,7 @@ function outer() {
 }
 
 outer();
+// I love this movie called ${movie.toUpperCase()}
 ```
 
 28. Guess the output and the reason behind that.
@@ -325,6 +353,9 @@ function outer() {
 }
 
 outer();
+
+// I love this movie called ${movie.toUpperCase()}
+
 ```
 
 29. Guess the output and the reason behind that.
@@ -344,6 +375,8 @@ function outer() {
 }
 
 outer();
+// I love this movie called ${movie.toUpperCase()}
+
 ```
 
 30. Execute all the functions inside `allFunctions` variable using any loop. (Hint: use for of loop functions are object)
@@ -363,6 +396,7 @@ const divide = (a, b) => {
 };
 
 let allFunctions = [add, sub, multiply, divide];
+
 ```
 
 31. You have to pass 10 and 12 as initial value and find the final output when you pass the return value of one function as an input to the next function in the array `allFunctions`.
